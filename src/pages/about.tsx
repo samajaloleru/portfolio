@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/background.png";
 
-import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { WhatsappLogo, GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 
 
 export default function About(): JSX.Element {
@@ -17,17 +17,17 @@ export default function About(): JSX.Element {
             </div>
             <div className="text-sm opacity-45">Software Engineer</div>
             <div className="grid grid-cols-4 gap-4 mt-4">
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary">
+              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <LinkedinLogo size={24} />
               </div>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary">
+              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <GithubLogo size={24} />
               </div>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary">
+              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <InstagramLogo  size={24} />
               </div>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary">
-                <FacebookLogo size={24} />
+              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
+                <WhatsappLogo size={24} />
               </div>
             </div>
             <div className="rounded-xl mt-4 w-full bg-white p-3 text-center bg-opacity-10">
@@ -38,7 +38,7 @@ export default function About(): JSX.Element {
 
         <div className="flex flex-col md:w-1/2 gap-10">
           <div className="flex flex-col w-full gap-10">
-            <div className="text-lg font-medium">ABOUT ME</div>
+            <div className="text-lg font-semibold">ABOUT ME</div>
             <div className="opacity-75 tracking-wide leading-6">
               As a Senior Software Engineer with 7+ years of hands-on experience, I specialize in architecting and delivering high-performance, full-stack web applications that drive business growth and user engagement. Proficient in modern frontend frameworks like React.js, Next.js, Vue.js, Nuxt.js, and TypeScript, I build intuitive, responsive interfaces optimized for performance and accessibility. On the backend, I leverage Node.js, Laravel, and REST/GraphQL APIs to design scalable microservices and cloud-native solutions, with expertise in AWS, Docker, and CI/CD pipelines. My experience spans industries such as fintech, e-commerce, and SaaS, where I’ve successfully led cross-functional teams to deploy solutions handling millions of users, while adhering to Agile methodologies, Test-Driven Development (TDD), and DevOps best practices
             </div>
@@ -47,14 +47,30 @@ export default function About(): JSX.Element {
             </div>
           </div>
 
-          <div className="flex flex-col w-full gap-10">
-            <div className="text-lg font-medium">EXPERIENCE</div>
-            <div className="flex flex-col w-full gap-2">
-              <div className="">2024</div>
-              <div className="text-light-green">Senior Software Engineer</div>
-              <div className="">Aider</div>
+          <div className="flex flex-col w-full gap-5">
+            <div className="text-lg font-semibold">EXPERIENCE</div>
+            <div className="flex flex-col w-full">
+              <div className="opacity-40">2024</div>
+              <div className="text-light-green text-xl">Senior Software Engineer</div>
+              <div className="opacity-40 text-sm font-semibold tracking-widest">Aider</div>
               <div className="opacity-75 tracking-wide leading-6">
                 Spearheaded the enhancement of the company's core platform by leading the development of order fulfillment, inventory management, and customer support integration features, implementing a JWT-based authentication system to bolster security and data privacy, optimizing code performance by 15% through profiling and caching, and collaborating cross-functionally to ensure on-time delivery aligned with business objectives.
+              </div>
+            </div>
+            <div className="flex flex-col w-full">
+              <div className="opacity-40">2021 -2023</div>
+              <div className="text-light-green text-xl">Senior Software Engineer</div>
+              <div className="opacity-40 text-sm font-semibold tracking-widest">Moove Africa</div>
+              <div className="opacity-75 tracking-wide leading-6">
+                Spearheaded the development of the company's ride-hailing platform by designing and maintaining critical features such as driver-rider matching, real-time location tracking, in-app payments, and route optimization, implementing a microservices architecture to improve scalability and system reliability, automating CI/CD pipelines to accelerate deployment and reduce manual effort, and mentoring junior developers on best practices in code reviews, design patterns, and debugging techniques.
+              </div>
+            </div>
+            <div className="flex flex-col w-full">
+              <div className="opacity-40">2016 - 2021</div>
+              <div className="text-light-green text-xl">Software Engineer</div>
+              <div className="opacity-40 text-sm font-semibold tracking-widest">Essential Software Company</div>
+              <div className="opacity-75 tracking-wide leading-6">
+                Designed and developed a customer relationship management (CRM) system with features including contact management, lead tracking, opportunity management, and sales forecasting, implemented a RESTful API to integrate seamlessly with marketing automation and e-commerce platforms, and enforced data accuracy through validation rules, cleansing routines, and quality checks.
               </div>
             </div>
           </div>
