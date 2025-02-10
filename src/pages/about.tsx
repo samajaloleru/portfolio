@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/images/background.png";
 
 import { WhatsappLogo, GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
+import ExperienceCarousel from "../components/reuseables/experience";
 
 
 export default function About(): JSX.Element {
@@ -46,34 +47,7 @@ export default function About(): JSX.Element {
               Beyond technical execution, I thrive in collaborative environments, bridging gaps between product, design, and engineering teams to align technical outcomes with strategic goals. My passion for innovation is matched by a commitment to clean code, robust documentation, and mentoring junior developers. I’ve spearheaded initiatives to migrate legacy systems to modern architectures, optimize application performance by 40%+, and integrate AI-driven features like chatbots and predictive analytics. A lifelong learner, I stay ahead of industry trends through certifications in cloud technologies and contributions to open-source projects, ensuring solutions are both cutting-edge and sustainable.
             </div>
           </div>
-
-          <div className="flex flex-col w-full gap-5">
-            <div className="text-lg font-semibold">EXPERIENCE</div>
-            <div className="flex flex-col w-full">
-              <div className="opacity-40">2024</div>
-              <div className="text-light-green text-xl">Senior Software Engineer</div>
-              <div className="opacity-40 text-sm font-semibold tracking-widest">Aider</div>
-              <div className="opacity-75 tracking-wide leading-6">
-                Spearheaded the enhancement of the company's core platform by leading the development of order fulfillment, inventory management, and customer support integration features, implementing a JWT-based authentication system to bolster security and data privacy, optimizing code performance by 15% through profiling and caching, and collaborating cross-functionally to ensure on-time delivery aligned with business objectives.
-              </div>
-            </div>
-            <div className="flex flex-col w-full">
-              <div className="opacity-40">2021 -2023</div>
-              <div className="text-light-green text-xl">Senior Software Engineer</div>
-              <div className="opacity-40 text-sm font-semibold tracking-widest">Moove Africa</div>
-              <div className="opacity-75 tracking-wide leading-6">
-                Spearheaded the development of the company's ride-hailing platform by designing and maintaining critical features such as driver-rider matching, real-time location tracking, in-app payments, and route optimization, implementing a microservices architecture to improve scalability and system reliability, automating CI/CD pipelines to accelerate deployment and reduce manual effort, and mentoring junior developers on best practices in code reviews, design patterns, and debugging techniques.
-              </div>
-            </div>
-            <div className="flex flex-col w-full">
-              <div className="opacity-40">2016 - 2021</div>
-              <div className="text-light-green text-xl">Software Engineer</div>
-              <div className="opacity-40 text-sm font-semibold tracking-widest">Essential Software Company</div>
-              <div className="opacity-75 tracking-wide leading-6">
-                Designed and developed a customer relationship management (CRM) system with features including contact management, lead tracking, opportunity management, and sales forecasting, implemented a RESTful API to integrate seamlessly with marketing automation and e-commerce platforms, and enforced data accuracy through validation rules, cleansing routines, and quality checks.
-              </div>
-            </div>
-          </div>
+          <ExperienceCarousel />
         </div>
 
       </div>

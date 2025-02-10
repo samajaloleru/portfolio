@@ -7,9 +7,10 @@ interface ScrollTextProps {
 const ScrollingText: React.FC<ScrollTextProps> = ({message}) => {
     const textRef = useRef<HTMLDivElement>(null);
 
+
     useEffect(() => {
         if (textRef.current) {
-        textRef.current.style.animation = "scroll-text 60s linear infinite";
+            textRef.current.style.animation = "scroll-text 60s linear infinite";
         }
     }, []);
     return (
