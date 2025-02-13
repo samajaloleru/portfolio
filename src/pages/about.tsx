@@ -3,14 +3,16 @@ import logo from "../assets/images/background.png";
 
 import { WhatsappLogo, GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import ExperienceCarousel from "../components/reuseables/experience";
+import Skills from "../components/reuseables/skills";
+import { Link } from "react-router-dom";
 
 
 export default function About(): JSX.Element {
  
   return (
-    <div className={`flex flex-col gap-10 items-center w-full z-30 text-white pb-10`} >
+    <div className={`flex flex-col gap-10 items-center w-full z-30 text-white py-10`} >
       <div className="flex flex-col md:flex-row items-start gap-10 w-full">
-        <div className="bg-secondary rounded-[2rem] static gap-5 flex flex-col md:w-1/2 p-7">
+        <div className="bg-gradient-to-r from-secondary from-70% to-black rounded-[2rem] static gap-5 flex flex-col md:w-1/2 p-7">
           <img className="aspect-square md:h-[25rem] w-full object-cover rounded-[2rem]" alt="logo" src={logo} />
           <div className="flex flex-col items-center w-full gap-3 text-white">
             <div className="md:text-[2rem] text-2xl leading-tight font-semibold">
@@ -18,22 +20,22 @@ export default function About(): JSX.Element {
             </div>
             <div className="text-sm opacity-45">Software Engineer</div>
             <div className="grid grid-cols-4 gap-4 mt-4">
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
+              <a href="https://www.linkedin.com/in/ajaloleru-samson" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <LinkedinLogo size={24} />
-              </div>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
+              </a>
+              <a href="https://github.com/samajaloleru" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <GithubLogo size={24} />
-              </div>
+              </a>
               <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <InstagramLogo  size={24} />
               </div>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
+              <a href="https://wa.link/irvdk7" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
                 <WhatsappLogo size={24} />
-              </div>
+              </a>
             </div>
-            <div className="rounded-xl mt-4 w-full bg-white p-3 text-center bg-opacity-10">
+            <Link to={'/contact'} className="rounded-xl mt-4 w-full bg-white p-3 text-center hover:text-light-green bg-opacity-10">
               Contact Me
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -48,6 +50,7 @@ export default function About(): JSX.Element {
             </div>
           </div>
           <ExperienceCarousel />
+          <Skills />
         </div>
 
       </div>

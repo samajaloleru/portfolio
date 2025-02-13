@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AlertProvider } from '../utils/notification/alertcontext';
 import Alert from '../utils/notification/alert';
 
-import {About, Home, NotFound} from '../pages/_route';
+import {About, Contact, Home, NotFound} from '../pages/_route';
 import Navbar from '../components/reuseables/navbar';
 
 const IndexRoutes = () => {
@@ -29,6 +29,7 @@ const IndexRoutes = () => {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<Contact/>} />
             {/* <Route path="/games" element={<Games/>} /> */}
             <Route path="/*" element={<NotFound/>} />
           </Routes>

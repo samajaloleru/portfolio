@@ -18,6 +18,7 @@ module.exports = {
       'red': '#8F0404',
       'primary': '#0f0f0f',
       'secondary': '#181818',
+      'transparent': 'transparent',
     },
     screens: {
       'xs': '574px',

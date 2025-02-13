@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
   const [viewMode, setViewMode] = useState<"home" | "create" | "update">("home");
  
   return (
-    <div className={`flex flex-col gap-10 items-center w-full z-30 text-white pb-10`} >
+    <div className={`flex flex-col gap-10 items-center w-full z-30 text-white py-10`} >
       <div className="grid lg:grid-cols-2 gap-10 w-full">
         <Link to="/about" className="bg-gradient-to-r from-secondary from-70% to-black rounded-[2rem] gap-5 grid md:grid-cols-2 grid-cols-1 w-full p-7">
           <img className="aspect-square h-52 w-full object-cover rounded-tl-[2rem] rounded-br-[2rem]" alt="logo" src={logo} />

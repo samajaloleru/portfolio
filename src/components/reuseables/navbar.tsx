@@ -26,7 +26,7 @@ const Navbar = () => {
             <NavLink to='/services' className={({ isActive }) => (isActive ? 'text-white' : '')}>
               Works
             </NavLink>
-            <NavLink to='/services' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+            <NavLink to='/contact' className={({ isActive }) => (isActive ? 'text-white' : '')}>
               Contact
             </NavLink>
           </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
               <NavLink onClick={() => SetShowMenu(false)} to='/professionals'>
                 Works
               </NavLink>
-              <NavLink onClick={() => SetShowMenu(false)} to='/services'>
+              <NavLink onClick={() => SetShowMenu(false)} to='/contact'>
                 Contact
               </NavLink>
             </div>
