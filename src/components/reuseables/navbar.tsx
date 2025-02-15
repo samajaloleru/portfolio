@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className='flex flex-col fixed top-0 right-0 w-screen h-screen bg-black bg-opacity-70 z-50'>
           <div className='flex flex-col w-full relative bg-[#110f16]'>
             <div className='flex flex-row items-center justify-between w-full py-3 px-5 border-b border-gray-200'>
-              <NavLink to='/'>
+              <NavLink to='/' onClick={() => SetShowMenu(false)}>
                 <img src={logo} alt='logo' className='h-10'/>
               </NavLink>
               <i onClick={() => SetShowMenu(false)} className='fi fi-rr-cross text-white cursor-pointer'></i>

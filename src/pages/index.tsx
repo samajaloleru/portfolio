@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
             <ScrollingText message="Highly motivated and results-oriented Senior Software Engineer with over 7 years of experience designing, developing, and deploying robust and scalable web applications. Possess a strong foundation in both front-end and back-end technologies, including React.js, Node.js, and various JavaScript frameworks. Passionate about creating innovative and user-friendly solutions that solve real-world problems. Strong team player with excellent communication and problem-solving skills." />
           </div>
           <div className="gap-10 grid md:grid-cols-2 w-full mt-[6rem]">
-            <div className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
+            <Link to="/about" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
               <UserFocus size={70} />
               <div className="justify-between items-center flex flex-row w-full">
                 <div className="flex flex-col ">
@@ -42,8 +42,8 @@ export default function Home(): JSX.Element {
                 </div>
                 <ArrowSquareOut size={32} />
               </div>
-            </div>
-            <div className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
+            </Link>
+            <Link to="/work" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
               <UserFocus size={70} />
               <div className="justify-between items-center flex flex-row w-full">
                 <div className="flex flex-col ">
@@ -54,12 +54,12 @@ export default function Home(): JSX.Element {
                 </div>
                 <ArrowSquareOut size={32} />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>     
       <div className="gap-10 grid md:grid-cols-3 w-full">
-        <div className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
+        <Link to="/about" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
           <UserFocus size={70} />
           <div className="justify-between items-center flex flex-row w-full">
             <div className="flex flex-col ">
@@ -70,15 +70,15 @@ export default function Home(): JSX.Element {
             </div>
             <ArrowSquareOut size={32} />
           </div>
-        </div>
-        <div className="flex flex-col items-center md:col-span-2 w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
+        </Link>
+        <Link to="/contact" className="flex flex-col items-center md:col-span-2 w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
           <div className="justify-between mt-10 items-end flex flex-row w-full">
             <div className="text-[2.5rem] lg:text-[2rem] leading-tight font-semibold">
               Let's  <br/>work <span className="text-light-green">together.</span> 
             </div>
             <ArrowSquareOut size={32} />
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
