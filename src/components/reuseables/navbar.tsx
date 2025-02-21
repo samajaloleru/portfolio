@@ -23,7 +23,7 @@ const Navbar = () => {
             <NavLink to='/about' className={({ isActive }) => (isActive ? 'text-white' : '')}>
               About
             </NavLink>
-            <NavLink to='/services' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+            <NavLink to='/works' className={({ isActive }) => (isActive ? 'text-white' : '')}>
               Works
             </NavLink>
             <NavLink to='/contact' className={({ isActive }) => (isActive ? 'text-white' : '')}>
@@ -48,7 +48,7 @@ const Navbar = () => {
               <NavLink onClick={() => SetShowMenu(false)} to='/about'>
                 About
               </NavLink>
-              <NavLink onClick={() => SetShowMenu(false)} to='/professionals'>
+              <NavLink onClick={() => SetShowMenu(false)} to='/works'>
                 Works
               </NavLink>
               <NavLink onClick={() => SetShowMenu(false)} to='/contact'>

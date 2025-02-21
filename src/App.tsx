@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { Routes, Route, useLocation} from 'react-router-dom';
 
 import IndexRoutes from './containers/index';
-import { useEffect } from 'react';
 
 const App = () => {
   const { pathname } = useLocation();
