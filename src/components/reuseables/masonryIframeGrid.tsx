@@ -10,6 +10,11 @@ const MasonryIframeGrid = () => {
     { url: 'https://goldaesthetics.uk/', title: 'Gold Aesthetics' },
   ];
 
+//   const mobileViewport = `
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+//     <style>body { margin: 0; overflow-x: hidden; }</style>
+//   `;
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6 text-gray-800">All Projects</h1>
@@ -22,16 +27,18 @@ const MasonryIframeGrid = () => {
             style={{ height: `${Math.random() * 300 + 200}px` }}
           >
             <iframe
-              src={site.url+'?platform=mobile'}
-              title={site.title}
-              className="w-full h-full rounded-lg border-none"
-              loading="lazy"
+                src={site.url+'?platform=mobile'}
+                title={site.title}
+                className="w-full h-full rounded-lg border-none"
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary from-50% to-transparent p-4">
               <h2 className="text-white font-semibold text-lg truncate">
                 {site.title}
               </h2>
-              <a href={site.url} target="_blank" className="text-gray-200 text-sm truncate">{site.url}</a>
+              <a href={site.url} target="_blank" rel="noreferrer" className="text-light-green text-sm truncate">{site.url}</a>
             </div>
           </div>
         ))}

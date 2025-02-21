@@ -1,8 +1,7 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { isMobile } from 'react-device-detect';
 
 import logo from '../../assets/images/logo.png';
-import { useState } from 'react';
 
 
 const Navbar = () => {
@@ -15,24 +14,28 @@ const Navbar = () => {
         <NavLink  to='/'>
           <img src={logo} alt='logo' className='md:h-20 h-16'/>
         </NavLink>
-        <div className={`${isMobile ? 'hidden' : '' } flex flex-col text-lg text-default  justify-end`}>
-          <div className={`tracking-wide flex flex-row gap-[4rem] text-[1rem] items-center justify-end`}>
-            <NavLink to='/' className={({ isActive }) => (isActive ? 'text-white' : '')}>
-              Home
-            </NavLink>
-            <NavLink to='/about' className={({ isActive }) => (isActive ? 'text-white' : '')}>
-              About
-            </NavLink>
-            <NavLink to='/works' className={({ isActive }) => (isActive ? 'text-white' : '')}>
-              Works
-            </NavLink>
-            <NavLink to='/contact' className={({ isActive }) => (isActive ? 'text-white' : '')}>
-              Contact
-            </NavLink>
+        <div className="hidden lg:block">
+          <div className={`flex flex-col text-lg text-default  justify-end`}>
+            <div className={`tracking-wide flex flex-row gap-[4rem] text-[1rem] items-center justify-end`}>
+              <NavLink to='/' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+                Home
+              </NavLink>
+              <NavLink to='/about' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+                About
+              </NavLink>
+              <NavLink to='/works' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+                Works
+              </NavLink>
+              <NavLink to='/contact' className={({ isActive }) => (isActive ? 'text-white' : '')}>
+                Contact
+              </NavLink>
+            </div>
           </div>
         </div>
-        <div className={`${isMobile ? '' : 'hidden' } flex flex-row gap-4 text-white items-center`}>
-          <i onClick={() => SetShowMenu(true)} className='fi fi-rr-menu-burger cursor-pointer'></i>
+        <div className="lg:hidden block">
+          <div className={`flex flex-row gap-4 text-white items-center`}>
+            <i onClick={() => SetShowMenu(true)} className='fi fi-rr-menu-burger cursor-pointer'></i>
+          </div>
         </div>
       </div>
       {showMenu && 
