@@ -27,7 +27,7 @@ const MasonryIframeGrid = () => {
             style={{ height: `${Math.random() * 300 + 200}px` }}
           >
             <iframe
-                src={site.url+'?platform=mobile'}
+                src={site.url}
                 title={site.title}
                 className="w-full h-full rounded-lg border-none"
                 loading="lazy"
