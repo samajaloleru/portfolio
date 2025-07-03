@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/images/background.png";
 
 import { ArrowSquareOut, UserFocus } from "@phosphor-icons/react";
@@ -6,9 +6,7 @@ import ScrollingText from "../components/reuseables/scrollingText";
 import { Link } from "react-router-dom";
 
 
-export default function Home(): JSX.Element {
-  const [viewMode, setViewMode] = useState<"home" | "create" | "update">("home");
- 
+export default function Home(): JSX.Element { 
   return (
     <div className={`flex flex-col gap-10 items-center w-full z-30 text-white py-10`} >
       <div className="grid lg:grid-cols-2 gap-10 w-full">
