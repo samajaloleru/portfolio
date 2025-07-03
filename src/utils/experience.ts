@@ -1,7 +1,7 @@
 export const  experienceList = [
     {
-        company: "Aider",
-        year: "2024",
+        company: "ValidationApp",
+        year: "2023 - Present",
         role: "Senior Software Engineer",
         description: "Spearheaded the enhancement of the company's core platform by leading the development of order fulfillment, inventory management, and customer support integration features, implementing a JWT-based authentication system to bolster security and data privacy, optimizing code performance by 15% through profiling and caching, and collaborating cross-functionally to ensure on-time delivery aligned with business objectives."
     },

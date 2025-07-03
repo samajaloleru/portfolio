@@ -33,7 +33,7 @@ const IndexRoutes = () => {
     <div className={`flex flex-col bg-primary items-center w-full overflow-auto select-none h-screen`} ref={textRef}>
       <Navbar/>
       <AlertProvider>
-        <div className='flex flex-col lg:w-3/5 w-11/12'>
+        <div className='flex flex-col lg:w-8/12 w-11/12'>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<About/>} />

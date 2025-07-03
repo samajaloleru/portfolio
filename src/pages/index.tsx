@@ -33,22 +33,22 @@ export default function Home(): JSX.Element {
           <div className="gap-10 grid md:grid-cols-2 w-full mt-[6rem]">
             <Link to="/about" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
               <UserFocus size={70} />
-              <div className="justify-between items-center flex flex-row w-full">
+              <div className="justify-between items-end flex flex-row w-full">
                 <div className="flex flex-col ">
                   <div className="opacity-55 uppercase text-sm tracking-wide">more about me</div>
-                  <div className="text-[1.4rem] lg:text-[2rem] leading-tight font-semibold">
+                  <div className="text-[1.4rem] leading-tight font-semibold">
                     Credentials 
                   </div>
                 </div>
                 <ArrowSquareOut size={32} />
               </div>
             </Link>
-            <Link to="/work" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
+            <Link to="/works" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
               <UserFocus size={70} />
-              <div className="justify-between items-center flex flex-row w-full">
+              <div className="justify-between items-end flex flex-row w-full">
                 <div className="flex flex-col ">
                   <div className="opacity-55 uppercase text-sm tracking-wide">showcase</div>
-                  <div className="text-[1.4rem] lg:text-[2rem] leading-tight font-semibold">
+                  <div className="text-[1.4rem] leading-tight font-semibold">
                     Projects 
                   </div>
                 </div>
@@ -61,10 +61,10 @@ export default function Home(): JSX.Element {
       <div className="gap-10 grid md:grid-cols-3 w-full">
         <Link to="/about" className="flex flex-col items-center w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
           <UserFocus size={70} />
-          <div className="justify-between items-center flex flex-row w-full">
+          <div className="justify-between items-end flex flex-row w-full">
             <div className="flex flex-col ">
               <div className="opacity-55 uppercase text-sm tracking-wide">stay with me</div>
-              <div className="text-[1.4rem] lg:text-[2rem] leading-tight font-semibold">
+              <div className="text-[1.4rem] leading-tight font-semibold">
                 Profiles 
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
         </Link>
         <Link to="/contact" className="flex flex-col items-center md:col-span-2 w-full gap-7 text-white bg-gradient-to-r from-secondary from-70% to-black p-7 rounded-[2rem]">
           <div className="justify-between mt-10 items-end flex flex-row w-full">
-            <div className="text-[2.5rem] lg:text-[2rem] leading-tight font-semibold">
+            <div className="text-[2.5rem] leading-tight font-semibold">
               Let's  <br/>work <span className="text-light-green">together.</span> 
             </div>
             <ArrowSquareOut size={32} />

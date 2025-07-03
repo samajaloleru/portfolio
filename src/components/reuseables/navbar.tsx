@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div className='flex flex-col items-center w-full relative'>
-      <div className='flex flex-row justify-between items-center lg:w-3/5 w-11/12 lg:py-5 py-3'>
+      <div className='flex flex-row justify-between items-center lg:w-8/12 w-11/12 lg:py-5 py-3'>
         <NavLink  to='/'>
           <img src={logo} alt='logo' className='md:h-20 h-16'/>
         </NavLink>
