@@ -1,8 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 
-import { Phone, WhatsappLogo, GithubLogo, InstagramLogo, LinkedinLogo, MapPinArea } from "@phosphor-icons/react";
-import ExperienceCarousel from "../components/reuseables/experience";
-import Skills from "../components/reuseables/skills";
+import { Phone, WhatsappLogo, GithubLogo, LinkedinLogo, MapPinArea } from "@phosphor-icons/react";
 import InputField from "../components/reuseables/Input/input";
 import TextArea from "../components/reuseables/Textarea/textarea";
 
@@ -25,10 +23,10 @@ export default function Contact(): JSX.Element {
                 <div className="text-sm opacity-45 leading-tight mb-2">
                   MAIL ME
                 </div>
-                <a href="mailto:samsonajaloleru@gmail.com" target="_blank" className="text-sm">
+                <a href="mailto:samsonajaloleru@gmail.com" target="_blank" rel="noreferrer" className="text-sm">
                   samsonajaloleru@gmail.com
                 </a>
-                <a href="mailto:ajalolerusegun@gmail.com" target="_blank" className="text-sm">
+                <a href="mailto:ajalolerusegun@gmail.com" target="_blank" rel="noreferrer" className="text-sm">
                   ajalolerusegun@gmail.com
                 </a>
               </div>
@@ -66,13 +64,13 @@ export default function Contact(): JSX.Element {
           <div className="flex flex-col w-full gap-5">
             <div className="text-lg font-semibold uppercase">Social Info</div>
             <div className="flex flex-row gap-4">
-              <a href="https://www.linkedin.com/in/ajaloleru-samson" target="_blank" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
+              <a href="https://www.linkedin.com/in/ajaloleru-samson" target="_blank" rel="noreferrer" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
                 <LinkedinLogo size={28} />
               </a>
-              <a href="https://github.com/samajaloleru" target="_blank" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
+              <a href="https://github.com/samajaloleru" target="_blank" rel="noreferrer" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
                 <GithubLogo size={28} />
               </a>
-              <a href="https://wa.link/irvdk7" target="_blank" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
+              <a href="https://wa.link/irvdk7" target="_blank" rel="noreferrer" className="rounded-full p-5 shadow-white shadow-sm bg-secondary text-light-green">
                 <WhatsappLogo size={28} />
               </a>
             </div>
