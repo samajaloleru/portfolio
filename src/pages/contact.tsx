@@ -23,7 +23,7 @@ export default function Contact(): JSX.Element {
               </div>
               <div className="flex flex-col w-full">
                 <div className="text-sm opacity-45 leading-tight mb-2">
-                  MAIL US
+                  MAIL ME
                 </div>
                 <a href="mailto:samsonajaloleru@gmail.com" target="_blank" className="text-sm">
                   samsonajaloleru@gmail.com
@@ -39,7 +39,7 @@ export default function Contact(): JSX.Element {
               </div>
               <div className="flex flex-col w-full">
                 <div className="text-sm opacity-45 leading-tight mb-2">
-                  CONTACT US
+                  CONTACT ME
                 </div>
                 <a href="tel:+234913-917-5151" className="text-sm">
                   +234 913-917-5151
