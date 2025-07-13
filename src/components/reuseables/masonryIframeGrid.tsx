@@ -8,7 +8,7 @@ const MasonryIframeGrid = () => {
     { url: 'https://www.eccorp.co', title: 'Eccorp' },
     { url: 'https://www.ectc.ltd', title: 'ECTC' },
     { url: 'https://goldaesthetics.uk', title: 'Gold Aesthetics' },
-    { url: 'https://amobileadership.org', title: 'Amobi Eductaion Foundation' },
+    { url: 'https://www.amobileadership.org', title: 'Amobi Eductaion Foundation' },
     { url: 'https://omotola-ui-app.vercel.app', title: 'C.C.C. Omotola Cathedral Member Portal' },
     { url: 'https://sarathealthcare.co.uk', title: 'Sarat Healthcare' },
   ];
@@ -27,7 +27,7 @@ const MasonryIframeGrid = () => {
           <div 
             key={index}
             className="break-inside-avoid relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-            style={{ height: `${Math.random() * 300 + 200}px` }}
+            style={{ height: `${Math.random() * 500 + 300}px` }}
           >
             <iframe
                 src={site.url+'?platform=mobile'}
