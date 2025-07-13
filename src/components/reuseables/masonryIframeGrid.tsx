@@ -7,9 +7,10 @@ const MasonryIframeGrid = () => {
     // { url: ' https://www.vye.social', title: 'Vye' },
     { url: 'https://www.eccorp.co', title: 'Eccorp' },
     { url: 'https://www.ectc.ltd', title: 'ECTC' },
-    { url: 'https://goldaesthetics.uk/', title: 'Gold Aesthetics' },
-    { url: 'https://amobileadership.org/', title: 'Amobi Eductaion Foundation' },
-    { url: 'https://omotola-ui-app.vercel.app/', title: 'C.C.C. Omotola Cathedral Member Portal' },
+    { url: 'https://goldaesthetics.uk', title: 'Gold Aesthetics' },
+    { url: 'https://amobileadership.org', title: 'Amobi Eductaion Foundation' },
+    { url: 'https://omotola-ui-app.vercel.app', title: 'C.C.C. Omotola Cathedral Member Portal' },
+    { url: 'https://sarathealthcare.co.uk', title: 'Sarat Healthcare' },
   ];
 
 //   const mobileViewport = `
