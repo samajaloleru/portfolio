@@ -20,7 +20,7 @@ const MasonryIframeGrid = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">All Projects</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-800">All Project(s)</h1>
       
       <div className="columns-1 sm:columns-2 gap-4 space-y-4">
         {websites.map((site, index) => (
