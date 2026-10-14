@@ -1,85 +1,39 @@
-import { NavLink } from 'react-router-dom';
-import { useState } from "react";
-import logo from '../../assets/images/logo.png';
-import { BsChevronRight } from 'react-icons/bs';
-import { AiOutlineMail } from "react-icons/ai";
+import { Link } from 'react-router-dom';
+import { ArrowUp } from '@phosphor-icons/react';
+import { EMAIL, socials } from '../../utils/profile';
 
-import { FaAsterisk } from 'react-icons/fa6';
-import { isMobile } from 'react-device-detect';
-	
-
-const Footer = () => {
-  const [handleDisclaimerPopUp, setHandleDisclaimerPopUp] = useState(false);
-  
-  const handleToggleModal = (newValue : boolean) => {    
-    setHandleDisclaimerPopUp(newValue);
-  };
-  
-  
-  return (
-    <div className='bg-footer flex flex-col items-center w-full lg:py-10 py-5'>
-      <div className='flex flex-col lg:w-9/12 w-11/12 justify-center items-center lg:h-[35rem]'>
-        <div className='flex flex-row w-full justify-between items-start'>
-          <div className={`flex-col flex lg:w-auto w-full lg:items-start items-center gap-2`}>
-            <NavLink className='' to='/'>
-              <img src={logo} alt='logo' className='lg:h-20 h-12'/>
-            </NavLink>
-            <div className={`${isMobile ? 'flex-row items-center' : 'flex-col'} font-akshar flex gap-2`}>
-              <div className='lg:text-lg lg:text-start text-center text-white'>
-                <span className='underline'><a target='_blank' rel="noreferrer" href='https://www.portfolio.co/' className='cursor-pointer'>A subsidiary of <span className='text-[#B39659]'>EC CORP</span>.</a></span>
-              </div>
-            </div>
-            <div className={`${isMobile ? 'flex-row items-center' : 'flex-col'} flex gap-2`}>
-              <div className='flex flex-row gap-3 lg:text-lg items-center text-white'>
-                <AiOutlineMail />
-                <div className='underline'>info@portfolio.ltd</div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${isMobile ? 'hidden':''} flex-col flex justify-between gap-2 w-1/2`}>
-            <div className='text-[#B39659] lg:text-[1.5rem] text-lg font-semibold  tracking-wide'>
-              OFFICE LOCATIONS
-              <div className='border-b-2 border-white w-1/12 pt-3'></div>
-            </div>
-            <div className='grid grid-cols-2 border-b text-lg border-white justify-between items-center text-[1.4rem] text-white mt-5 pb-2 gap-4'>
-              <div className=''>Lagos, NG</div>
-              <div className='flex flex-row gap-3 justify-end items-center'>
-                <div>Google Maps</div>
-                <BsChevronRight className='text-[#B39659]'/>
-              </div>
-            </div>
-            <div className='grid grid-cols-2 border-b text-lg border-white justify-between items-center text-[1.4rem] text-white mt-5 pb-2 gap-4'>
-              <div className=''>London, UK</div>
-              <div className='flex flex-row gap-3 justify-end items-center'>
-                <div>Google Maps</div>
-                <BsChevronRight className='text-[#B39659]'/>
-              </div>
-            </div>
-            <div className='grid grid-cols-2 border-b text-lg border-white justify-between items-center text-[1.4rem] text-white mt-5 pb-2 gap-4'>
-              <div className=''>New York, US</div>
-              <div className='flex flex-row gap-3 justify-end items-center'>
-                <div>Google Maps</div>
-                <BsChevronRight className='text-[#B39659]'/>
-              </div>
-            </div>
-            <div className='flex flex-row text-lg justify-between items-center text-[1.4rem] text-white mt-5 pb-2 gap-4'>
-              <div onClick={() => setHandleDisclaimerPopUp(!handleDisclaimerPopUp)} className='flex flex-row gap-3 items-center cursor-pointer'>
-                <FaAsterisk />
-                <div className=''>Read disclaimer</div>
-              </div>
-              <NavLink to='/contact' className='flex flex-row gap-3 justify-end items-center'>
-                <div className='font-semibold text-[#B39659] font-akshar text-[1.3rem]'>VISIT OUR CONTACT PAGE</div>
-                <BsChevronRight className='text-white'/>
-              </NavLink>
-            </div>
-          </div>
+const Footer = () => (
+  <footer className="mt-32 border-t border-line overflow-hidden">
+    <div className="max-w-[1400px] mx-auto px-5 md:px-10 pt-14 pb-8 flex flex-col gap-12">
+      <div className="flex flex-col md:flex-row justify-between gap-10">
+        <div className="flex flex-col gap-3">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Have a project in mind?</span>
+          <Link to="/contact" className="group font-display text-4xl md:text-6xl leading-none">
+            Start a <em className="text-accent group-hover:underline underline-offset-8 decoration-1">conversation</em>
+          </Link>
         </div>
-        <div className='text-white lg:text-[1.4rem] lg:mt-10 mt-3'>Designed and Developed by <span className='text-[#B39659] font-akshar'>ECCORP LTD</span></div>
+        <div className="flex flex-col gap-2 text-sm md:items-end">
+          <a href={`mailto:${EMAIL}`} className="hover:text-accent transition-colors">{EMAIL}</a>
+          {socials.map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="text-muted hover:text-fg transition-colors">
+              {s.label} ↗
+            </a>
+          ))}
+        </div>
       </div>
 
-    </div>
-  )
-}
+      <div className="font-display italic text-outline leading-[0.8] text-[22vw] md:text-[17vw] tracking-tight select-none -mb-[4vw]" aria-hidden>
+        Ajaloleru
+      </div>
 
-export default Footer
+      <div className="flex justify-between items-center font-mono text-xs text-muted">
+        <span>© {new Date().getFullYear()} Samson Ajaloleru. Lagos, NG.</span>
+        <a href="#main" className="flex items-center gap-2 hover:text-fg transition-colors">
+          Back to top <ArrowUp size={14} />
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;

@@ -1,74 +1,47 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { Plus } from "@phosphor-icons/react";
 import { experienceList } from "../../utils/experience";
 
-interface ExpericenceDetail {
-  company: string;
-  year: string;
-  role: string;
-  description: string;
-}
-
-const ExperienceCarousel = () => {
-  const textRef = useRef<HTMLDivElement>(null);
-  const [selectedExperienceDetatils, setSelectedExperienceDetatils] = useState<ExpericenceDetail>({ ...experienceList[0] });
-
-  useEffect(() => {
-    if (textRef.current) {
-      // Remove the animation class if it exists
-      textRef.current.classList.remove("slide-in-right");
-      
-      // Force a reflow to reset the animation
-      void textRef.current.offsetWidth;
-      
-      // Add the animation class to trigger the animation
-      textRef.current.classList.add("slide-in-right");
-      
-    }
-  }, [selectedExperienceDetatils]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSelectedExperienceDetatils((prevExperience) => {
-        const currentIndex = experienceList.findIndex(exp => exp.company === prevExperience.company);
-        const nextIndex = (currentIndex + 1) % experienceList.length;
-        return experienceList[nextIndex];
-      });
-    }, 5000); // Change every 5 seconds (adjust as needed)
-
-    return () => clearInterval(timer);
-  }, []);
+const Experience = () => {
+  const [open, setOpen] = useState(0);
 
   return (
-    <div className="flex flex-col w-full gap-5">
-      <div className="text-lg font-semibold">EXPERIENCE</div>
-      <div className="flex flex-row flex-wrap items-center gap-4 w-full">
-        {experienceList &&
-          experienceList.map((experience, index) => (
-            <div
-              key={index}
-              onClick={() => setSelectedExperienceDetatils({ ...experience })}
-              className={`${
-                selectedExperienceDetatils.company === experience.company
-                  ? "shadow-white shadow-sm"
-                  : ""
-              } bg-secondary text-light-green px-5 py-3 text-xs cursor-pointer`}
-            >
-              {experience.company}
-            </div>
-          ))}
-      </div>
-      <div className="flex flex-col w-full" ref={textRef}>
-        <div className="opacity-40">{selectedExperienceDetatils.year}</div>
-        <div className="text-light-green text-xl">{selectedExperienceDetatils.role}</div>
-        <div className="opacity-40 text-sm font-semibold tracking-widest">
-          {selectedExperienceDetatils.company}
-        </div>
-        <div className="opacity-75 tracking-wide leading-6">
-          {selectedExperienceDetatils.description}
-        </div>
-      </div>
-    </div>
+    <section className="flex flex-col gap-8">
+      <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">Experience</h2>
+      <ol className="border-t border-line">
+        {experienceList.map((exp, i) => {
+          const isOpen = open === i;
+          return (
+            <li key={exp.company} className="border-b border-line">
+              <button
+                onClick={() => setOpen(isOpen ? -1 : i)}
+                aria-expanded={isOpen}
+                className="group w-full grid grid-cols-[1fr_auto] md:grid-cols-[9rem_1fr_auto] items-center gap-x-6 gap-y-1 py-6 text-left"
+              >
+                <span className="font-mono text-xs text-muted tabular-nums">{exp.year}</span>
+                <span className="col-start-1 md:col-start-2 text-2xl md:text-3xl tracking-tight group-hover:text-accent transition-colors">
+                  {exp.company}
+                </span>
+                <Plus
+                  size={20}
+                  className={`row-span-2 md:row-span-1 col-start-2 md:col-start-3 row-start-1 transition-transform duration-500 ${isOpen ? "rotate-45 text-accent" : "text-muted"}`}
+                />
+              </button>
+              {/* grid-rows trick animates height without measuring */}
+              <div className={`grid transition-[grid-template-rows] duration-500 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                <div className="overflow-hidden">
+                  <div className="md:pl-[10.5rem] pb-8 flex flex-col gap-3">
+                    <span className="font-display italic text-xl text-accent">{exp.role}</span>
+                    <p className="text-fg/70 leading-relaxed max-w-[62ch]">{exp.description}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   );
 };
 
-export default ExperienceCarousel;
+export default Experience;

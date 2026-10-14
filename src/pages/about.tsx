@@ -1,58 +1,67 @@
-import React, { useState } from "react";
-import logo from "../assets/images/background.png";
-
-import { WhatsappLogo, GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
-import ExperienceCarousel from "../components/reuseables/experience";
-import Skills from "../components/reuseables/skills";
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "@phosphor-icons/react";
 
+import portrait from "../assets/images/background.jpeg";
+import Experience from "../components/reuseables/experience";
+import Skills from "../components/reuseables/skills";
+import { socials } from "../utils/profile";
+
+const d = (ms: number) => ({ "--d": `${ms}ms` } as React.CSSProperties);
 
 export default function About(): JSX.Element {
- 
   return (
-    <div className={`flex flex-col gap-10 items-center w-full z-30 text-white py-10`} >
-      <div className="flex flex-col md:flex-row items-start gap-10 w-full">
-        <div className="bg-gradient-to-r from-secondary from-70% to-black rounded-[2rem] static gap-5 flex flex-col md:w-1/2 p-7">
-          <img className="aspect-square md:h-[25rem] w-full object-cover rounded-[2rem]" alt="logo" src={logo} />
-          <div className="flex flex-col items-center w-full gap-3 text-white">
-            <div className="md:text-[2rem] text-2xl leading-tight font-semibold">
-              Samson Ajaloleru.
-            </div>
-            <div className="text-sm opacity-45">Software Engineer</div>
-            <div className="grid grid-cols-4 gap-4 mt-4">
-              <a href="https://www.linkedin.com/in/ajaloleru-samson" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
-                <LinkedinLogo size={24} />
-              </a>
-              <a href="https://github.com/samajaloleru" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
-                <GithubLogo size={24} />
-              </a>
-              <div className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
-                <InstagramLogo  size={24} />
-              </div>
-              <a href="https://wa.link/irvdk7" target="_blank" className="rounded-full p-3 shadow-white shadow-sm bg-secondary text-light-green">
-                <WhatsappLogo size={24} />
-              </a>
-            </div>
-            <Link to={'/contact'} className="rounded-xl mt-4 w-full bg-white p-3 text-center hover:text-light-green bg-opacity-10">
-              Contact Me
-            </Link>
+    <div className="pt-14 md:pt-20 grid md:grid-cols-12 gap-12 md:gap-8">
+      {/* Profile card */}
+      <aside className="md:col-span-4 md:sticky md:top-28 self-start flex flex-col gap-6">
+        <div className="rise group relative overflow-hidden rounded-[2rem] bg-surface aspect-[4/5]" style={d(0)}>
+          <img src={portrait} alt="Samson Ajaloleru" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-fg/85 via-fg/10 to-transparent" />
+          <div className="absolute bottom-0 inset-x-0 p-6 flex flex-col gap-1 text-bg">
+            <span className="font-display text-4xl">Samson Ajaloleru</span>
+            <span className="text-sm text-bg/75">Senior Software Engineer</span>
           </div>
         </div>
-
-        <div className="flex flex-col md:w-1/2 gap-10">
-          <div className="flex flex-col w-full gap-10">
-            <div className="text-lg font-semibold">ABOUT ME</div>
-            <div className="opacity-75 tracking-wide leading-6">
-              As a Senior Software Engineer with 7+ years of hands-on experience, I specialize in architecting and delivering high-performance, full-stack web applications that drive business growth and user engagement. Proficient in modern frontend frameworks like React.js, Next.js, Vue.js, Nuxt.js, and TypeScript, I build intuitive, responsive interfaces optimized for performance and accessibility. On the backend, I leverage Node.js, Laravel, and REST/GraphQL APIs to design scalable microservices and cloud-native solutions, with expertise in AWS, Docker, and CI/CD pipelines. My experience spans industries such as fintech, e-commerce, and SaaS, where I’ve successfully led cross-functional teams to deploy solutions handling millions of users, while adhering to Agile methodologies, Test-Driven Development (TDD), and DevOps best practices
-            </div>
-            <div className="opacity-75 tracking-wide leading-6">
-              Beyond technical execution, I thrive in collaborative environments, bridging gaps between product, design, and engineering teams to align technical outcomes with strategic goals. My passion for innovation is matched by a commitment to clean code, robust documentation, and mentoring junior developers. I’ve spearheaded initiatives to migrate legacy systems to modern architectures, optimize application performance by 40%+, and integrate AI-driven features like chatbots and predictive analytics. A lifelong learner, I stay ahead of industry trends through certifications in cloud technologies and contributions to open-source projects, ensuring solutions are both cutting-edge and sustainable.
-            </div>
-          </div>
-          <ExperienceCarousel />
-          <Skills />
+        <dl className="rise grid grid-cols-2 gap-y-4 font-mono text-xs border-t border-line pt-6" style={d(120)}>
+          <dt className="text-muted">Based in</dt><dd>Lagos, Nigeria</dd>
+          <dt className="text-muted">Active since</dt><dd>2016</dd>
+          <dt className="text-muted">Status</dt><dd className="text-accent">Open to work</dd>
+        </dl>
+        <div className="rise flex flex-wrap gap-2" style={d(200)}>
+          {socials.map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
+              className="group flex items-center gap-1 rounded-full border border-line px-4 py-2 text-sm hover:border-accent hover:text-accent transition-colors">
+              {s.label} <ArrowUpRight size={12} className="transition-transform group-hover:rotate-45" />
+            </a>
+          ))}
         </div>
+      </aside>
 
+      <div className="md:col-span-7 md:col-start-6 flex flex-col gap-24">
+        <section className="flex flex-col gap-8">
+          <h1 className="rise font-display text-5xl md:text-7xl leading-[0.95] tracking-tight" style={d(60)}>
+            I build software that <em className="text-accent">keeps working</em> after launch.
+          </h1>
+          <div className="rise flex flex-col gap-6 text-fg/75 leading-relaxed max-w-[62ch]" style={d(180)}>
+            <p className="first-letter:font-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:leading-[0.8] first-letter:text-accent">
+              I'm a senior software engineer with 7+ years of hands-on experience designing and delivering full-stack web
+              applications. On the front end I work in React.js, Next.js, Vue.js, Nuxt.js and TypeScript, building interfaces
+              that are fast, responsive and accessible. On the back end I use Node.js, Laravel and REST/GraphQL APIs to design
+              scalable services, deployed with AWS, Docker and CI/CD pipelines.
+            </p>
+            <p>
+              My work spans fintech, e-commerce and SaaS, where I've led cross-functional teams shipping products used by
+              millions. I care about clean code, solid documentation and mentoring junior developers. I've migrated legacy
+              systems to modern architectures, improved application performance by more than 40%, and integrated features
+              like chatbots and predictive analytics.
+            </p>
+          </div>
+          <Link to="/contact" className="w-fit text-sm underline underline-offset-8 decoration-line hover:decoration-accent transition-colors">
+            Get in touch
+          </Link>
+        </section>
+
+        <Experience />
+        <Skills />
       </div>
     </div>
   );

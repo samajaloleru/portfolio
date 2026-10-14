@@ -6,6 +6,10 @@ module.exports = {
   theme: {
     fontFamily: {
       apercu: ["Apercu", "sans-serif"],
+      sans: ["Geist", "system-ui", "sans-serif"],
+      display: ["'Bricolage Grotesque'", "Geist", "sans-serif"],
+      serif: ["'Instrument Serif'", "Georgia", "serif"],
+      mono: ["'Geist Mono'", "ui-monospace", "monospace"],
     },
     extend: {},
     colors: {
@@ -19,29 +23,23 @@ module.exports = {
       'primary': '#0f0f0f',
       'secondary': '#181818',
       'transparent': 'transparent',
+      'current': 'currentColor',
+      // swiss-poster palette
+      'bg': '#f1eee6',
+      'surface': '#e8e4d9',
+      'fg': '#141414',
+      'muted': '#6b6860',
+      'line': 'rgba(20, 20, 20, 0.14)',
+      'accent': '#e5450f',
     },
     screens: {
       'xs': '574px',
-      // => @media (min-width: 574px) { ... }
-      
       'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
       'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
       'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
       'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
     }
   },
-  plugins: [
-    // require('@tailwindcss/line-clamp'),
-    // require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }

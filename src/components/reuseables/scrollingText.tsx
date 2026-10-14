@@ -1,30 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 interface ScrollTextProps {
-    message: string;
+  items: string[];
 }
 
-const ScrollingText: React.FC<ScrollTextProps> = ({message}) => {
-    const textRef = useRef<HTMLDivElement>(null);
-
-
-    useEffect(() => {
-        if (textRef.current) {
-            textRef.current.style.animation = "scroll-text 60s linear infinite";
-        }
-    }, []);
-    return (
-        <div className="w-full overflow-hidden whitespace-nowrap relative ">
-            <div className="flex gap-5 w-max" ref={textRef}>
-                <div className="inline-block text-sm">
-                    {message} &nbsp; 🚀
-                </div>
-                <div className="inline-block text-sm">
-                    {message} &nbsp; 🚀
-                </div>
-            </div>
-        </div>
-    );
-};
+// Content is doubled and translated -50% so the loop is seamless.
+const ScrollingText: React.FC<ScrollTextProps> = ({ items }) => (
+  <div className="w-full overflow-hidden border-y border-line py-6 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
+    <div className="marquee flex w-max">
+      {[...items, ...items].map((item, i) => (
+        <span key={i} className="flex items-center font-display text-4xl md:text-6xl whitespace-nowrap">
+          <span className={i % 2 ? "italic text-muted" : ""}>{item}</span>
+          <span className="mx-8 text-accent text-2xl" aria-hidden>✳</span>
+        </span>
+      ))}
+    </div>
+  </div>
+);
 
 export default ScrollingText;
